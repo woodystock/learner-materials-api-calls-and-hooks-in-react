@@ -18,7 +18,7 @@ We'll use the **useState** hook again to track the state of user favourites.
 const [characterFavourites, setCharacterFavourites] = useState([]);
 ```
 
-## Passing props down to components
+## Passing props down to components
 
 In order to add the character to the list of favourites or decide whether the character is already favourited then we need both the **characterFavourites** array and the **setCharacterFavourites** function. These are defined in **App.js** so we need to pass them down as **props**, firstly through to the [CharacterContainer](../src/components/CharacterContainer.js) and then on to the [Character](../src/components/Character.js) component.
 
