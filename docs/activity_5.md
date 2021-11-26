@@ -28,7 +28,7 @@ Since our app is entirely based around favouriting Disney characters it seems ap
 
 💡 The golden rule is that we should wrap our contexts around the smallest possible tree of components that need access to the context data. For example, if we had an "FAQ" page it wouldn't need to access any product data, so any `ProductContext` should not be global, but should just wrap the Product pages.
 
-## Creating the context
+## Creating the context
 
 In order to do this we'll need to firstly create the context. The context will then wrap all your components.
 
