@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+
+.page {
+  margin: 0;
+  font-family: "Mouse Memoirs";
+  background-color: #bde0fe;
+}
+
+.header__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header__title {
+  font-size: 5em;
+  margin: 5px;
+}
+
+.header__page-count {
+  font-size: 1.8em;
+  margin: 5px;
+}
+
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+.navigation__item {
+  flex: 1;
+}
+
+.navigation__button {
+  font-family: "Mouse Memoirs";
+  background-color: #555;
+  border-radius: 4px;
+  font-size: 3vh;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  min-width: 50px;
+}
+
+.character-container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.character-row {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+@media (max-width: 675px) {
+  .page {
+    margin: 0;
+    font-family: "Mouse Memoirs";
+  }
+
+  .header__title {
+    font-size: 3.5em;
+    margin: 5px;
+  }
+}
+
+.character-item {
+  flex: 1;
+  border: 3px solid #666;
+  border-radius: 5%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  height: 440px;
+  background-color: #ffafcc;
+}
+
+.character-item__img {
+  max-height: 270px;
+}
+
+.character-item__actions {
+  font-size: 1.3em;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: lighter;
+}
