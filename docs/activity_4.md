@@ -62,7 +62,7 @@ We also need to make sure the props are destructured when the CharacterContainer
 function CharacterContainer({ characters, characterFavourites, updateFavourites }) {
 ```
 
-## Adding to favourites
+## Adding to favourites
 
 Let's recap what you've done.
 
@@ -119,7 +119,7 @@ Attach an onClick listener
 
 Double check the browser console - if you are having any console errors then re-review the steps before proceeding.
 
-## Conditional rendering
+## Conditional rendering
 
 Now we should be successfully adding items to favourites but visually the user doesn't get any feedback.
 
