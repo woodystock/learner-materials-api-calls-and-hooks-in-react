@@ -44,4 +44,3 @@ You should then be able to access the application by opening the browser and vis
 ## Let's get started
 
 Assuming you were able to start the application, let's move on to the [first activity](./docs/activity_1.md) and bring in the API call.
-# learner-materials-api-calls-and-hooks-in-react
