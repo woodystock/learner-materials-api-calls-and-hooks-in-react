@@ -6,6 +6,8 @@ import CharacterContainer from './components/CharacterContainer';
 import Navigation from './components/Navigation';
 import axios from 'axios';
 
+export const FavouritesContext = React.createContext();
+
 function App() {
 
   // Some dummy state representing disney characters
@@ -25,13 +27,14 @@ function App() {
   }, [currentPage])
 
   return (
-    <div className="page">
-      <Header currentPage={currentPage} />
-      <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <CharacterContainer characters={characters}
-                          characterFavourites={characterFavourites}
-                          setCharacterFavourites={setCharacterFavourites} />
-    </div>
+    <FavouritesContext.Provider value={characterFavourites}>
+      <div className="page">
+        <Header currentPage={currentPage} />
+        <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        <CharacterContainer characters={characters}
+                            setCharacterFavourites={setCharacterFavourites} />
+      </div>
+    </FavouritesContext.Provider>
   );
 }
 
