@@ -1,19 +1,16 @@
-
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import { FavouritesProvider } from './components/FavouritesContext';
 import Header from './components/Header';
 import CharacterContainer from './components/CharacterContainer';
 import Navigation from './components/Navigation';
 import axios from 'axios';
-
-export const FavouritesContext = React.createContext();
 
 function App() {
 
   // Some dummy state representing disney characters
   const [characters, setCharacters] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [characterFavourites, setCharacterFavourites] = useState([]);
 
   const getCharacters = async (pageNumber) => {
     // axios for api calls
@@ -27,14 +24,13 @@ function App() {
   }, [currentPage])
 
   return (
-    <FavouritesContext.Provider value={characterFavourites}>
+    <FavouritesProvider>
       <div className="page">
         <Header currentPage={currentPage} />
         <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
-        <CharacterContainer characters={characters}
-                            setCharacterFavourites={setCharacterFavourites} />
+        <CharacterContainer characters={characters} />
       </div>
-    </FavouritesContext.Provider>
+    </FavouritesProvider>
   );
 }
 

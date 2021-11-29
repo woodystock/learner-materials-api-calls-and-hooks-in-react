@@ -1,9 +1,9 @@
-import React, { useContext } from "react"
-import {FavouritesContext} from "../App"
+import {useFavourites, useFavouritesUpdate} from './FavouritesContext'
 
-function Character({ character, setCharacterFavourites }) {
+function Character({ character }) {
 
-  const characterFavourites = useContext(FavouritesContext);
+  const characterFavourites = useFavourites();
+  const toggleFavourites = useFavouritesUpdate();
 
   // default image
   let imageSrc = "https://picsum.photos/id/237/200/300?blur";
@@ -14,17 +14,8 @@ function Character({ character, setCharacterFavourites }) {
     imageSrc = character.imageUrl.substring( 0, character.imageUrl.indexOf('/revision'));
   }
 
-  const toggleFavouriteForCharacter = (characterId) => {
-    if(!characterFavourites.includes(characterId)) {
-      setCharacterFavourites(prevCharacterFavourites => [...prevCharacterFavourites, characterId])
-    }
-    else {
-      setCharacterFavourites(prevCharacterFavourites => prevCharacterFavourites.filter( item => item !== characterId));
-    }
-  }
-
   const clickFavouritesHandler = (event) => {
-    toggleFavouriteForCharacter(character._id);
+    toggleFavourites(character._id);
   }
 
   return (
