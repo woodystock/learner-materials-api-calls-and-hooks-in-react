@@ -11,8 +11,8 @@ const AppPage = () => {
   // Some dummy state representing disney characters
   const [characters, setCharacters] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [showFavourites, setShowFavourites] = useState(false);
 
-  const showFavourites = useShowFavourites();
   const favouriteCharacters = useFavourites();
 
   const getCharacters = async (pageNumber) => {
@@ -29,7 +29,11 @@ const AppPage = () => {
     return (
         <div className="page">
             <Header currentPage={currentPage} />
-            <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            <Navigation 
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              showFavourites={showFavourites}
+              setShowFavourites={setShowFavourites} />
             <CharacterContainer characters={showFavourites ? favouriteCharacters : characters} />
         </div>
     )

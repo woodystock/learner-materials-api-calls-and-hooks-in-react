@@ -1,9 +1,4 @@
-import { useShowFavourites, useShowFavouritesUpdate } from "./FavouritesContext";
-
-function Navigation({ currentPage, setCurrentPage }) {
-
-    const showFavourites = useShowFavourites();
-    const toggleShowFavourites = useShowFavouritesUpdate();
+function Navigation({ currentPage, setCurrentPage, showFavourites, setShowFavourites }) {
 
     const nextPage = () => {
         const newPageNumber = currentPage + 1;
@@ -15,6 +10,11 @@ function Navigation({ currentPage, setCurrentPage }) {
             const newPageNumber = currentPage - 1;
             setCurrentPage(newPageNumber);
         }
+    }
+
+    const toggleShowFavourites = () => {
+        setCurrentPage(1);
+        setShowFavourites(prevShow => !prevShow)
     }
 
     return (
