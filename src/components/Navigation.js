@@ -1,4 +1,9 @@
+import { useShowFavourites, useShowFavouritesUpdate } from "./FavouritesContext";
+
 function Navigation({ currentPage, setCurrentPage }) {
+
+    const showFavourites = useShowFavourites();
+    const toggleShowFavourites = useShowFavouritesUpdate();
 
     const nextPage = () => {
         const newPageNumber = currentPage + 1;
@@ -18,7 +23,7 @@ function Navigation({ currentPage, setCurrentPage }) {
                 <button className="navigation__button" onClick={prevPage}>Prev Page</button>
             </div>
             <div className="navigation__item">
-                <button className="navigation__button" onClick={prevPage}>Show Favourites</button>
+                <button className="navigation__button" onClick={toggleShowFavourites}>{showFavourites ? "Show Characters" : "Show Favourites"}</button>
             </div>
             <div className="navigation__item">
                 <button className="navigation__button" onClick={nextPage}>Next Page</button>

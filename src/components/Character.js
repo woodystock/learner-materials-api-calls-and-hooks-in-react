@@ -3,7 +3,7 @@ import {useFavourites, useFavouritesUpdate} from './FavouritesContext'
 function Character({ character }) {
 
   const characterFavourites = useFavourites();
-  const toggleFavourites = useFavouritesUpdate();
+  const toggleFavourite = useFavouritesUpdate();
 
   // default image
   let imageSrc = "https://picsum.photos/id/237/200/300?blur";
@@ -15,7 +15,7 @@ function Character({ character }) {
   }
 
   const clickFavouritesHandler = (event) => {
-    toggleFavourites(character._id);
+    toggleFavourite(character);
   }
 
   return (
@@ -24,7 +24,7 @@ function Character({ character }) {
       <h2>{character.name}</h2>
 
       <div className="character-item__actions" onClick={clickFavouritesHandler}>
-        {!characterFavourites.includes(character._id) ? "Add to favourites" : "Favourited"}
+        {!characterFavourites.includes(character) ? "Add to favourites" : "Favourited"}
       </div>
 
       <img className="character-item__img" src={imageSrc} alt={character.name} />
