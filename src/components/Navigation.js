@@ -23,7 +23,7 @@ function Navigation({ currentPage, setCurrentPage }) {
                 <button className="navigation__button" onClick={prevPage}>Prev Page</button>
             </div>
             <div className="navigation__item">
-                <button className="navigation__button" onClick={toggleShowFavourites}>{showFavourites ? "Show Characters" : "Show Favourites"}</button>
+                <button className="navigation__button" onClick={toggleShowFavourites}>{showFavourites ? "Show All" : "Show Favourites"}</button>
             </div>
             <div className="navigation__item">
                 <button className="navigation__button" onClick={nextPage}>Next Page</button>
