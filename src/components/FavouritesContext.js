@@ -33,4 +33,3 @@ export const FavouritesProvider = ({children}) => {
         </FavouritesContext.Provider>
     )
 }
-
